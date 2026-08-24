@@ -22,7 +22,7 @@ param networkingResourceGroupName string
 param publicNetworkAccess string = 'Disabled'
 
 @description('The model name to be deployed. The model name can be found in the OpenAI portal.')
-param modelName string = 'gpt-35-turbo'
+param modelName string = 'gpt-4o-mini'
 
 @description('The model version to be deployed. At the time of writing this is the latest version is eastus2.')
 param modelVersion string = '0613'
@@ -73,7 +73,6 @@ resource modelDeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-
     model: {
       format: 'OpenAI'
       name: modelName
-      version: modelVersion
     }
   }
 }
